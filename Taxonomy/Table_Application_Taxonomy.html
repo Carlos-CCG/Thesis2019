@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <th>ID</th>
+            <th>Primary cause</th>
+            <th>Potential root cause</th>
+            <th>Example</th>
+            <th style="white-space:nowrap;">Silva et.al. 2018</th>
+            <th style="white-space:nowrap;">Zhang et.al. 2004</th>
+        </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>The user fails to enter the intended infusion parameter value.</td>
+            <td>The device unexpectedly resets the display value without the user's awareness.</td>
+            <td>The display value is erroneously reset to 0 when the device registers the first key press for number entry.
+                For example, if the display is 9 when the user starts number entry, the input sequence <button class="btn btn-default btn-xs">.</button> <button class="btn btn-default btn-xs">2</button> results in 0.2, instead of 9.2, without any warning or notification.</td>
+            <td>Formulation of Procedures Mistake</td>
+            <td>Action Specification Mistake</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>The user fails to enter the intended infusion parameter value.</td>
+            <td>The device erroneously discards key presses without the user's awareness.</td>
+            <td>If the minimum legal value for the entered parameter is 0.1,  the input sequence <button class="btn btn-default btn-xs">0</button> <button class="btn btn-default btn-xs">.</button> <button class="btn btn-default btn-xs">0</button> <button class="btn btn-default btn-xs">1</button> is erroneously registered as 0.1 without any warning or notification.</td>
+            <td>Rule-Based Shortcut Error</td>
+            <td>Action Specification Mistake</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>The user fails to enter the intended infusion parameter value.</td>
+            <td>The device erroneously delays feedback without the user's awareness.</td>
+            <td>The display is updated after a delay because the software routines are still processing the last keyed command.</td>
+            <td>Observation Lapse</td>
+            <td>Action Evaluation Slip</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>The user fails to enter the intended infusion parameter value.</td>
+            <td>The device unexpectedly registers or discards the entered value before the user finishes entering it without the user's awareness.</td>
+            <td>The entered value is erroneously registered or discarded when the user exceeds x seconds to enter the value  without any warning or notification.</td>
+            <td>Execution Lapse</td>
+            <td>Action Execution Slip</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>The user fails to enter the intended infusion parameter value.</td>
+            <td>The device automatically changes the out-of-range value entered by the user without the user's awareness.</td>
+            <td>If the maximum value for the input field is 10,  the input sequence <button class="btn btn-default btn-xs">5</button> <button class="btn btn-default btn-xs">0</button> is changed into 10 without any warning or notification.</td>
+            <td>Skill-Based Shortcut Error</td>
+            <td>Action Specification Slip</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>The user fails to enter the intended infusion parameter value.</td>
+            <td>The device uses default values (e.g.,  provided by DERS) without the user's awareness.</td>
+            <td>The default value suggested by DERS is used for drug concentration without any warning or notification.</td>
+            <td>Goal Selection Mistake</td>
+            <td>Goal Mistake</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>The user fails to enter the intended infusion parameter value.</td>
+            <td>The device fails to distinguish between consecutive input actions (e.g.,  double clicks) and single input actions made by the user.</td>
+            <td>The key sequence <button class="btn btn-default btn-xs">2</button> <button class="btn btn-default btn-xs">2</button> <button class="btn btn-default btn-xs">.</button> <button class="btn btn-default btn-xs">3</button> is erroneously registered as 2.3 or 0.3 without any warning or notification when the key sequence <button class="btn btn-default btn-xs">2</button> <button class="btn btn-default btn-xs">2</button> is performed too quickly.</td>
+            <td>Skill-Based Shortcut Error</td>
+            <td>Action Evaluation Mistake</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>The user fails to enter the intended infusion parameter value.</td>
+            <td>The device erroneously accepts key combinations without the user's awareness.</td>
+            <td>Pressing key 2 and 3 simultaneously erroneously results in either 23 or 32 without any warning or notification.</td>
+            <td>Execution Slip</td>
+            <td>Action Execution Slip</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>The user fails to enter the intended infusion parameter value.</td>
+            <td>The device erroneously ignores key combinations without the user's awareness.</td>
+            <td>If the device has multiple up/down keys for editing the integer and the fractional part of the parameter value (e.g., fastUP for the integer part, and slowUP for the fractional part), simultaneous key presses of fastUP and slowUP are erroneously ignored without any warning or notification.</td>
+            <td>Formulation of Procedures Mistake</td>
+            <td>Action Evaluation Mistake</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>The user fails to enter the intended infusion parameter value.</td>
+            <td>Virtual keys rendered on touchscreen displays are too small for the user to press or read correctly.</td>
+            <td>Virtual keys are smaller than 23mm (which is the minimum size recommended by HF75:2009)</td>
+            <td>Execution Slip</td>
+            <td>Action Execution Slip</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>The user fails to enter the intended infusion parameter value.</td>
+            <td>The device fails to correctly update the value of a field (e.g., because of unsound computation or logic) based on the values of other relevant fields.</td>
+            <td>The device requires to enter volume to be infused and duration of infusion; the rate value is computed using arithmetic division with single precision floating point,  which may lead to unsound results.</td>
+            <td>Interpretation Mistake</td>
+            <td>Intention Mistake</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>The user fails to read the infusion infusion parameter value.</td>
+            <td>The device uses inappropriate fonts or formats to render values or units.</td>
+            <td>The device renders fractional values without a leading zero (e.g., .9 instead of 0.9), or integer values with leading zeros (e.g., 09 instead of 9).</td>
+            <td>Identification Mistake</td>
+            <td>Perception Mistake</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>The user fails to enter the intended infusion parameter value.</td>
+            <td>The number entry software allows numeric wrap-around with single key presses <br><em>(Numeric wrap-around refers to the way UP and DOWN keys behave at boundary conditions for maximum and minimum values: UP changes the maximum value into the minimum; DOWN changes the minimum value into the maximum. For cursored displays, numeric wrap-around affects also the way the cursor position is changed: LEFT changes the cursor position from the left-most position to the right-most position; the RIGHT key changes the cursor position from the right-most position to the left-most position.)</em></td>
+            <td>Devices with a cursored display enable moving the cursor from the least significant digit to the most significant digit with a single key press.</td>
+            <td>Execution Slip</td>
+            <td>Action Execution Slip</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>The user fails to enter the intended infusion parameter value.</td>
+            <td>The device is unable to verify or omits to check whether the hardware display is defective, incorrectly mounted, or incorrectly configured.</td>
+            <td>Display elements are erroneously mounted upside down without the user awareness.</td>
+            <td>Identification Mistake</td>
+            <td>Perception Mistake</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>The user fails to enter the intended infusion parameter value.</td>
+            <td>Infusion parameters values or units required by the pump are inconsistent with those provided in the prescription order used to program the pump.</td>
+            <td>The pump requires infusion rates in mL per hour, but the prescription order reports rates in mg per hour.</td>
+            <td>Task Definition Mistake</td>
+            <td>Intention Mistake</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>The user fails to enter the intended infusion parameter value.</td>
+            <td>The device positions labels and values of infusion parameters on the display inappropriately.</td>
+            <td>The label for volume to be infused is abbreviated as ``VTBI'' and shown next to the volume value --- the last letter of the acronym can be misread as a 1. For instance,  the text ``VTBI 9mL'' can be misread as ``VTBI 19mL''.</td>
+            <td>Device Monitoring Slip</td>
+            <td>Perception Slip</td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>The user fails to enter the intended infusion parameter units.</td>
+            <td>The device displays inappropriate abbreviations for units.</td>
+            <td>The device abbreviates micrograms into ``mg'' (which can be easily mistaken as milligrams).</td>
+            <td>Identification Mistake</td>
+            <td>Perception Mistake</td>
+        </tr>
+        <tr>
+            <td>18</td>
+            <td>The user fails to enter the intended infusion parameter units.</td>
+            <td>The device does not display the units during number entry.</td>
+            <td>A rate value is erroneously rendered as 9 without specifying the units.</td>
+            <td>Interpretation Mistake</td>
+            <td>Action Specification Mistake</td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <td>The user fails to enter the intended infusion parameter units.</td>
+            <td>The device uses inappropriate font type and/or size.</td>
+            <td>The device uses serif fonts,  or font size less than 12pt.</td>
+            <td>Device Monitoring Slip</td>
+            <td>Perception Slip</td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>The user fails to select the correct fluid, drug name, or patient profile.</td>
+            <td>The device displays similar-looking names for different information elements, e.g., fluid names, drug names, or patient profiles.</td>
+            <td>The device shows, e.g.,  two similar-looking abbreviations ``UAC'' and ``UVC'' for labeling two different fluids ``Umbilical Artery Catheter'' and ``Umbilical Venous Catheter''.</td>
+            <td>Identification Mistake</td>
+            <td>Perception Mistake</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>The user fails to resolve the error condition.</td>
+            <td>The device uses uninformative or incorrect notifications.</td>
+            <td>The device shows a generic message ``Out of range'' when the user enters a value that is either too high or too low, but omits to show the actual value registered by the device. Another example is: the device beeps and clears the display during number entry when the key pressed by the user results in a value that is either too high or too low.</td>
+            <td>Device Monitoring Slip</td>
+            <td>Perception Slip</td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td>The user fails to resolve the error condition.</td>
+            <td>The device unexpectedly halts number entry without providing feedback about the detected error.</td>
+            <td>The device halts number entry when the key sequence registered by the device results into a number that exceeds the legal limits of the infusion parameter,  but does not provide informative feedback about the detected error.</td>
+            <td>Task Definition Mistake</td>
+            <td>Action Evaluation Mistake</td>
+        </tr>
+        <tr>
+            <td>23</td>
+            <td>The user fails to enter the intended infusion parameter, or fails to resolve an error condition.</td>
+            <td>The device erroneously shows incomplete information without the user's awareness.</td>
+            <td>The device automatically scrolls or trims text messages that overflow the display capabilities.</td>
+            <td>Device Monitoring Slip</td>
+            <td>Perception Slip</td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td>The user commits a decimal point error.</td>
+            <td>The device ignores decimal point key presses without the user's awareness.</td>
+            <td>The key sequence <button class="btn btn-default btn-xs">1</button> <button class="btn btn-default btn-xs">0</button> <button class="btn btn-default btn-xs">0</button> <button class="btn btn-default btn-xs">.</button> <button class="btn btn-default btn-xs">1</button> is erroneously registered as 1001 without any warning or notification if the infusion parameter value must be an integer.</td>
+            <td>Skill-Based Shortcut Error</td>
+            <td>Action Evaluation Mistake</td>
+        </tr>
+        <tr>
+            <td>25</td>
+            <td>The user commits a decimal point error.</td>
+            <td>The device erroneously displays ill-formed integer values.</td>
+            <td>Integer values are rendered with leading zeros (e.g., 09 which can be easily misread as 0.9).</td>
+            <td>Identification Mistake</td>
+            <td>Perception Mistake</td>
+        </tr>
+        <tr>
+            <td>26</td>
+            <td>The user commits a decimal point error.</td>
+            <td>The device erroneously displays ill-formed fractional values.</td>
+            <td>Fractional values are rendered with ``naked'' decimal point (e.g., .9  which can be easily misread as 9).</td>
+            <td>Identification Mistake</td>
+            <td>Perception Mistake</td>
+        </tr>
+        <tr>
+            <td>27</td>
+            <td>The user commits a decimal point error.</td>
+            <td>The device erroneously accepts ill-formed integer values without the user's awareness.</td>
+            <td>The key sequence <button class="btn btn-default btn-xs">0</button> <button class="btn btn-default btn-xs">9</button> is erroneously accepted and registered as 9 without any warning or notification.</td>
+            <td>Execution Slip, Skill-Based Shortcut Error</td>
+            <td>Action Evaluation Mistake</td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td>The user commits a decimal point error.</td>
+            <td>The device erroneously accepts ill-formed fractional values without the user's awareness.</td>
+            <td>The key sequence <button class="btn btn-default btn-xs">.<button> <button class="btn btn-default btn-xs">9</button> is erroneously accepted and registered as 0.9 without any warning or notification.</td>
+            <td>Skill-Based Shortcut Error, Execution Slip</td>
+            <td>Action Evaluation Mistake</td>
+        </tr>
+        <tr>
+            <td>29</td>
+            <td>The user commits a decimal point error.</td>
+            <td>The device fails to display numeric values distinguishing the integral and fractional parts.</td>
+            <td>Fractional digits are rendered using the same font size and color used for integer digits.</td>
+            <td>Interpretation Mistake</td>
+            <td>Perception Mistake</td>
+        </tr>
+        <tr>
+            <td>30</td>
+            <td>The user commits a decimal point error.</td>
+            <td>The device does not enhance the visibility of the decimal point.</td>
+            <td>The decimal point is rendered using a small symbol . instead of a more visible • symbol.</td>
+            <td>Device Monitoring Slip</td>
+            <td>Perception Slip</td>
+        </tr>
+        <tr>
+            <td>31</td>
+            <td>The user commits a decimal point error.</td>
+            <td>The device erroneously renders integer digits as if they were fractional digits.</td>
+            <td>The integer value 1001 is erroneously rendered as 1001</td>
+            <td>Interpretation Mistake</td>
+            <td>Perception Mistake</td>
+        </tr>
+        <tr>
+            <td>32</td>
+            <td>The user commits a decimal point error.</td>
+            <td>The device always displays a decimal point even if the decimal point has not been registered.</td>
+            <td>The device renders 0. as initial value,  but the decimal point has not been registered.</td>
+            <td>Task Definition Mistake</td>
+            <td>Intention Mistake</td>
+        </tr>
+        <tr>
+            <td>33</td>
+            <td>The user commits a decimal point error.</td>
+            <td>The device uses inappropriate layouts for number entry keys.</td>
+            <td>The number entry layout rendered on the touchscreen places the decimal point key next to numeric keys.</td>
+            <td>Execution Slip</td>
+            <td>Action Execution Slip</td>
+        </tr>
+        <tr>
+            <td>34</td>
+            <td>The user commits a decimal point error.</td>
+            <td>The device erroneously accepts ill-formed values without the user's awareness.</td>
+            <td>The illegal input sequence <button class="btn btn-default btn-xs">9</button> <button class="btn btn-default btn-xs">.</button> <button class="btn btn-default btn-xs">0</button> <button class="btn btn-default btn-xs">.</button> <button class="btn btn-default btn-xs">9</button> is erroneously accepted without any warning or notification, and registered as 9.09</td>
+            <td>Execution Slip</td>
+            <td>Action Execution Slip</td>
+        </tr>
+        <tr>
+            <td>35</td>
+            <td>The user commits a decimal point error.</td>
+            <td>The device erroneously clears the fractional part of the value when a decimal point key press is registered.</td>
+            <td>The illegal input sequence <button class="btn btn-default btn-xs">9</button> <button class="btn btn-default btn-xs">0</button> <button class="btn btn-default btn-xs">9</button> is erroneously accepted and registered as 9.9 without any warning or notification.</td>
+            <td>Execution Slip</td>
+            <td>Action Execution Slip</td>
+        </tr>
+        <tr>
+            <td>36</td>
+            <td>The user fails to confirm the entered value.</td>
+            <td>The device requires a final confirmation but feedback suggests value accepted.</td>
+            <td>The entered value is confirmed with OK,  but the confirmed value is not applied until Confirm is pressed.</td>
+            <td>Goal Evaluation Slip</td>
+            <td>Action Evaluation Slip</td>
+        </tr>
+        <tr>
+            <td>37</td>
+            <td>The user fails to select the intended infusion parameter.</td>
+            <td>The input fields for one or more infusion parameters are not shown in the visible screen area without the user's awareness.</td>
+            <td>The input field for rate falls out of the visible screen area, but nothing suggests that the screen area can be scrolled.</td>
+            <td>Task Definition Mistake</td>
+            <td>Perception Slip</td>
+        </tr>
+        <tr>
+            <td>38</td>
+            <td>The user fails to select the intended infusion parameter.</td>
+            <td>The device uses inappropriate selection symbols or colors.</td>
+            <td>The device uses a ``cross-out'' symbol (X) to indicate selected items, instead of a ``check'' symbol (√).</td>
+            <td>Rule-Based Shortcut Error</td>
+            <td>Intention Mistake</td>
+        </tr>
+        <tr>
+            <td>39</td>
+            <td>The user fails to select the intended infusion parameter.</td>
+            <td>The device aligns informative text inappropriately, so that it can be read as labels of soft buttons.</td>
+            <td>The device displays the programmed rate value (e.g., 5 mL per hour) as a soft button label,  but the soft button cannot be used to select the input field for rate.</td>
+            <td>Interpretation Mistake</td>
+            <td>Perception Mistake</td>
+        </tr>
+        <tr>
+            <td>40</td>
+            <td>The user fails to enter the intended infusion parameter value.</td>
+            <td>The device displays multiple information inconsistently.</td>
+            <td>The device displays information about the current action (e.g., ``Enter Rate'') and instructions for the next action (e.g., ``Select volume to be infused'') at the same time.</td>
+            <td>Goal Selection Mistake</td>
+            <td>Goal Mistake</td>
+        </tr>
+        <tr>
+            <td>41</td>
+            <td>The user fails to select the intended infusion parameter.</td>
+            <td>Infusion parameters required by the pump are inconsistent with those provided in the prescription order used to program the pump.</td>
+            <td>The pump requires to enter infusion rate and then volume to be infused  but the prescription order reports volume first and then rate.</td>
+            <td>Rule-Based Shortcut Error</td>
+            <td>Action Specification Mistake</td>
+        </tr>
+        <tr>
+            <td>42</td>
+            <td>The user fails to modify the entered value.</td>
+            <td>The device is not responsive to user actions.</td>
+            <td>The device incorrectly locks the keys without the user's awareness. Another example is: the device software ``freezes'' because of infinite loops caused by program errors.</td>
+            <td>Execution Verification Slip</td>
+            <td>Action Evaluation Slip</td>
+        </tr>
+        <tr>
+            <td>43</td>
+            <td>The user fails to modify the entered value.</td>
+            <td>The same soft key is rendered in different positions in different device modes.</td>
+            <td>The soft key ``OK'' is either the first soft key on the right or the first on the left depending on the device mode.</td>
+            <td>Skill-Based Shortcut Error</td>
+            <td>Action Specification Slip</td>
+        </tr>
+        <tr>
+            <td>44</td>
+            <td>The user fails to modify the entered value.</td>
+            <td>The same soft key is displayed with different labels in different device modes.</td>
+            <td>The soft key used to cancel the entered value is either ``Cancel'' or ``Back'' depending on the device mode.</td>
+            <td>Interpretation Mistake</td>
+            <td>Action Specification Mistake</td>
+        </tr>
+        <tr>
+            <td>45</td>
+            <td>The user fails to enter the intended value.</td>
+            <td>Legal gestures on touchscreens are erroneously discarded without the user's awareness.</td>
+            <td>The device erroneously ignores press and hold gestures on virtual buttons.</td>
+            <td>Formulation of Procedures Mistake</td>
+            <td>Action Evaluation Mistake</td>
+        </tr>
+            <td>46</td>
+            <td>The user fails to confirm the entered value.</td>
+            <td>Illegal gestures on touchscreen are erroneously registered without the user's awareness.</td>
+            <td>The device erroneously de-selects input field areas if the user taps outside any input area.</td>
+            <td>Skill-Based Shortcut Error</td>
+            <td>Action Execution Slip</td>
+        </tr>
+        <tr>
+            <td>47</td>
+            <td>The user fails to confirm the entered value.</td>
+            <td>Similar gestures on touchscreen are erroneously associated with logically different functions.</td>
+            <td>The device associates ``slide left'' to Cancel,  and ``slide right'' to Confirm.</td>
+            <td>Rule-Based Shortcut Error</td>
+            <td>Action Specification Mistake</td>
+        </tr>
+        <tr>
+            <td>48</td>
+            <td>The user fails to enter the intended value.</td>
+            <td>The device uses different fractional precision for different infusion parameters without the user's awareness.</td>
+            <td>The device accepts rate values with one fractional digit,  and volume values with two fractional digits.</td>
+            <td>Knowledge-Based Shortcut Error</td>
+            <td>Action Specification Mistake</td>
+        </tr>
+        <tr>
+            <td>49</td>
+            <td>The user fails to enter the intended value.</td>
+            <td>For the same infusion parameter, the device accepts inconsistent precision or format for different value ranges without the user's awareness.</td>
+            <td>The device accepts rate values with fractional digits only if the value is less than 100</td>
+            <td>Rule-Based Shortcut Error</td>
+            <td>Action Specification Mistake</td>
+        </tr>
+        <tr>
+            <td>50</td>
+            <td>The user fails to enter the intended value.</td>
+            <td>The new device firmware changes the way the device handles input and output.</td>
+            <td>For devices with fastUP and slowUP keys, the increment step is changed  without the user's awareness (e.g., without updating user manuals).</td>
+            <td>Execution Mistake</td>
+            <td>Action Execution Slip</td>
+        </tr>
+        <tr>
+            <td>51</td>
+            <td>The user fails to predict the effect of key presses.</td>
+            <td>The device overloads number entry keys without the user's awareness.</td>
+            <td>Keys UP and DOWN are overloaded with MR (Memory Recall).</td>
+            <td>Task Definition Mistake</td>
+            <td>Action Specification Mistake</td>
+        </tr>
+        <tr>
+            <td>52</td>
+            <td>The user fails to select the intended units for infusion parameters.</td>
+            <td>The device automatically selects the wrong units without the user's awareness.</td>
+            <td>The device automatically selects the factory default units and omits to display the units during data entry.</td>
+            <td>Interpretation Mistake</td>
+            <td>Intention Mistake</td>
+        </tr>
+        <tr>
+            <td>53</td>
+            <td>The user fails to predict the effect of key presses.</td>
+            <td>The device unexpectedly changes the behavior of repeating keys.</td>
+            <td>The device changes the increment step of keys when they are pressed and held down for more than x seconds.</td>
+            <td>Execution Slip</td>
+            <td>Action Execution Slip</td>
+        </tr>
+    </tbody>
+    </table>
+</body>
+</html>

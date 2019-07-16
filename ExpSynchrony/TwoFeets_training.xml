@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biomose SYSTEM "biomoseconfig.dtd">
+<biomose>
+  <main>
+    <!-- Main settings of the viewer -->
+
+    <stimulus color="000000" random="1" repeat="10" time="2.5"
+              time_additional="0.00001">
+      <!-- define pseudo-random -->
+
+      <!--
+			repeat: integer [0,100], number of repetion of each group
+			time: float > 0, max time for the test in seconds
+			time_additional: float > 0, additional time to give an answer during the breaks
+			random: 0 or 1, 
+			0: the order of the scenes or the seq order will be taken
+			1: a random order will be produced, in each repetition another sequence
+			color: hexadecimal [00000-FFFFFF], background color of the break
+		-->
+
+      <!--
+				nr: integer > 0,  (must match with the defined scene numbers)
+        			if seq are given these order will be used, 
+        			otherwise the order of the scenes or a random order
+	  		-->
+
+      <!--<seq nr="1" />-->
+
+
+    </stimulus>
+
+    <break color="000000" time_max="0.0001" time_min="0.0001" />
+
+
+
+
+
+
+    <!--
+      			time_min: integer [1,100], min time between tests in seconds
+			time_max: integer [1,100], max time between tests in seconds
+			time_max != time_max, random value between tests
+			color: hexadecimal [00000-FFFFFF], background color of the break
+			image: string, an image
+		-->
+
+    <output button_left="-1" button_none="no" button_right="1" />
+
+    <!--
+			button_left, buttton_right, button_none:
+			char, output data
+
+		-->
+
+    <!--<save_raw path="data/raw" />-->
+
+    <!--
+			path: string, directory for the .raw files
+			if this tag is existent the frames will be saved
+		-->
+
+    <!--<frames rate="20" />//-->
+
+    <frames rate="60" />
+
+    <!--
+			rate: integer > 0, frames per second
+			if this tag is existent the frame rate will be limited,
+			the maximal value is depending on the power of the system
+		-->
+
+    <camera_main>
+      <fovy angle="42.67" />
+
+      <!--
+				angle: float [0.0,180.0], angle of the field of view in the x-z plane
+			-->
+
+      <aspect_ratio value="1.55" />
+
+      <!--
+				value: float > 0.0, aspect ratio of the frustum,
+				=0 default value -> width/height of the window
+			-->
+
+      <clipping_plane far="50.0" near="1.0" />
+
+      <!--
+				near, far: float > 0.0, distances between the viewpoint and
+				the clipping planes, along the negative z-axis
+			-->
+
+      <lookup x="0" y="1" z="0" />
+
+      <!--
+				x,y,z: float, vector, indicate which direction is up
+			-->
+
+      <position x="0" y="0" z="5" />
+
+      <!--
+				x,y,z: float, initial position of the camera
+			-->
+
+      <target fixed="1" x="0" y="0" z="0" />
+
+      <!--
+				x,y,z: float, desired viewpoint
+				fixed: 0 or 1,
+				1: true -> the target-point remains fixed during the movement of the camera
+				0: false -> the target-point moves in the same velocity as the camera
+			-->
+
+      <velocity type="linear" v="0" x="0" y="0" z="0" />
+
+      <!--
+				v: float > 0.0, meters per second
+				x,y,z: float, vector, direction of the movement
+-->
+    </camera_main>
+
+    <light intensity="0.8">
+      <direction x="1" y="1.05" z="4" />
+    </light>
+
+    <light intensity="0.8">
+      <direction x="-1" y="1.05" z="4" />
+    </light>
+
+    <treadmill port="lp-node1" />
+  </main>
+
+
+
+
+  <scenes>
+ 
+<scene answer="left" number="1">
+     
+	 <audio file="/home/biomose/Biomose/experiments/carlos/carlos_soa2/stimuli/sound_Exp2/MaxDur/MaxDur_Soa-240.wav" time="0" /> 
+
+      <model size="0.022"
+             src="/home/biomose/Biomose/experiments/carlos/carlos_soa2/stimuli/visual/TwoFeets/MaxDur/Rad1/TwoFeets_MaxDur"
+             unitize="false">
+        <position x="-1.10" y="0.91" z="-9" />
+      </model>
+ </scene>                   
+
+<scene answer="left" number="2">
+     
+	 <audio file="/home/biomose/Biomose/experiments/carlos/carlos_soa2/stimuli/sound_Exp2/MaxDur/MaxDur_Soa-210.wav" time="0" /> 
+
+      <model size="0.022"
+             src="/home/biomose/Biomose/experiments/carlos/carlos_soa2/stimuli/visual/TwoFeets/MaxDur/Rad1/TwoFeets_MaxDur"
+             unitize="false">
+        <position x="-1.10" y="0.91" z="-9" />
+      </model>
+ </scene>            
+
+<scene answer="left" number="3">
+     
+	 <audio file="/home/biomose/Biomose/experiments/carlos/carlos_soa2/stimuli/sound_Exp2/MaxDur/MaxDur_Soa-150.wav" time="0" /> 
+
+      <model size="0.022"
+             src="/home/biomose/Biomose/experiments/carlos/carlos_soa2/stimuli/visual/TwoFeets/MaxDur/Rad1/TwoFeets_MaxDur"
+             unitize="false">
+        <position x="-1.10" y="0.91" z="-9" />
+      </model>
+ </scene>            
+
+<scene answer="left" number="4">
+     
+	 <audio file="/home/biomose/Biomose/experiments/carlos/carlos_soa2/stimuli/sound_Exp2/MaxDur/MaxDur_Soa-90.wav" time="0" /> 
+
+      <model size="0.022"
+             src="/home/biomose/Biomose/experiments/carlos/carlos_soa2/stimuli/visual/TwoFeets/MaxDur/Rad1/TwoFeets_MaxDur"
+             unitize="false">
+        <position x="-1.10" y="0.91" z="-9" />
+      </model>
+ </scene>            
+
+<scene answer="left" number="5">
+     
+	 <audio file="/home/biomose/Biomose/experiments/carlos/carlos_soa2/stimuli/sound_Exp2/MaxDur/MaxDur_Soa-30.wav" time="0" /> 
+
+      <model size="0.022"
+             src="/home/biomose/Biomose/experiments/carlos/carlos_soa2/stimuli/visual/TwoFeets/MaxDur/Rad1/TwoFeets_MaxDur"
+             unitize="false">
+        <position x="-1.10" y="0.91" z="-9" />
+      </model>
+ </scene>            
+
+<scene answer="left" number="6">
+     
+	 <audio file="/home/biomose/Biomose/experiments/carlos/carlos_soa2/stimuli/sound_Exp2/MaxDur/MaxDur_Soa0.wav" time="0" /> 
+
+      <model size="0.022"
+             src="/home/biomose/Biomose/experiments/carlos/carlos_soa2/stimuli/visual/TwoFeets/MaxDur/Rad1/TwoFeets_MaxDur"
+             unitize="false">
+        <position x="-1.10" y="0.91" z="-9" />
+      </model>
+ </scene>            
+
+<scene answer="left" number="7">
+     
+	 <audio file="/home/biomose/Biomose/experiments/carlos/carlos_soa2/stimuli/sound_Exp2/MaxDur/MaxDur_Soa30.wav" time="0" /> 
+
+      <model size="0.022"
+             src="/home/biomose/Biomose/experiments/carlos/carlos_soa2/stimuli/visual/TwoFeets/MaxDur/Rad1/TwoFeets_MaxDur"
+             unitize="false">
+        <position x="-1.10" y="0.91" z="-9" />
+      </model>
+ </scene>            
+
+<scene answer="left" number="8">
+     
+	 <audio file="/home/biomose/Biomose/experiments/carlos/carlos_soa2/stimuli/sound_Exp2/MaxDur/MaxDur_Soa90.wav" time="0" /> 
+
+      <model size="0.022"
+             src="/home/biomose/Biomose/experiments/carlos/carlos_soa2/stimuli/visual/TwoFeets/MaxDur/Rad1/TwoFeets_MaxDur"
+             unitize="false">
+        <position x="-1.10" y="0.91" z="-9" />
+      </model>
+ </scene>            
+
+<scene answer="left" number="9">
+     
+	 <audio file="/home/biomose/Biomose/experiments/carlos/carlos_soa2/stimuli/sound_Exp2/MaxDur/MaxDur_Soa150.wav" time="0" /> 
+
+      <model size="0.022"
+             src="/home/biomose/Biomose/experiments/carlos/carlos_soa2/stimuli/visual/TwoFeets/MaxDur/Rad1/TwoFeets_MaxDur"
+             unitize="false">
+        <position x="-1.10" y="0.91" z="-9" />
+      </model>
+ </scene>            
+
+<scene answer="left" number="9">
+     
+	 <audio file="/home/biomose/Biomose/experiments/carlos/carlos_soa2/stimuli/sound_Exp2/MaxDur/MaxDur_Soa210.wav" time="0" /> 
+
+      <model size="0.022"
+             src="/home/biomose/Biomose/experiments/carlos/carlos_soa2/stimuli/visual/TwoFeets/MaxDur/Rad1/TwoFeets_MaxDur"
+             unitize="false">
+        <position x="-1.10" y="0.91" z="-9" />
+      </model>
+ </scene>      
+
+<scene answer="left" number="10">
+     
+	 <audio file="/home/biomose/Biomose/experiments/carlos/carlos_soa2/stimuli/sound_Exp2/MaxDur/MaxDur_Soa240.wav" time="0" /> 
+
+      <model size="0.022"
+             src="/home/biomose/Biomose/experiments/carlos/carlos_soa2/stimuli/visual/TwoFeets/MaxDur/Rad1/TwoFeets_MaxDur"
+             unitize="false">
+        <position x="-1.10" y="0.91" z="-9" />
+      </model>
+ </scene>      
+
+ 
+  </scenes>
+</biomose>

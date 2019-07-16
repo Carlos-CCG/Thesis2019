@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biomose SYSTEM "biomoseconfig.dtd">
+<biomose>
+  <main>
+    <!--000 Main settings of the viewer -->
+
+    <stimulus color="000000" random="1" repeat="4" time="1.00"
+              time_additional="1.00">
+      <!-- define pseudo-random -->
+
+      <!--
+			repeat: integer [0,100], number of repetion of each group
+			time: float > 0, max time for the test in seconds
+			time_additional: float > 0, additional time to give an answer during the breaks
+			random: 0 or 1, 
+			0: the order of the scenes or the seq order will be taken
+			1: a random order will be produced, in each repetition another sequence
+			color: hexadecimal [00000-FFFFFF], background color of the break
+		-->
+
+      <!--
+      
+                	<seq nr="1" />
+			<seq nr="3" />
+	                <seq nr="6" />
+			<seq nr="2" />
+                        <seq nr="7" />
+			<seq nr="5" />
+                        <seq nr="8" />
+			<seq nr="10" />
+                        <seq nr="9" />
+			<seq nr="4" />
+
+		-->
+
+      <!--
+				nr: integer > 0,  (must match with the defined scene numbers)
+        			if seq are given these order will be used, 
+        			otherwise the order of the scenes or a random order
+		  		-->
+    </stimulus>
+
+    <break color="000000" image="" time_max="0.75" time_min="0.75" />
+
+    <!--
+      			time_min: integer [1,100], min time between tests in seconds
+			time_max: integer [1,100], max time between tests in seconds
+			time_max != time_max, random value between tests
+			color: hexadecimal [00000-FFFFFF], background color of the break
+			image: string, an image
+		-->
+
+    <output button_left="antes" button_none="no" button_right="depois" />
+
+    <!--
+			button_left, buttton_right, button_none:
+			char, output data
+
+		-->
+
+    <!--<save_raw path="data/raw/cross" />//-->
+
+    <!--
+			path: string, directory for the .raw files
+			if this tag is existent the frames will be saved
+		-->
+
+    <!--<frames rate="20" />//-->
+
+    <frames rate="30" />
+
+    <!--
+			rate: integer > 0, frames per second
+			if this tag is existent the frame rate will be limited,
+			the maximal value is depending on the power of the system
+		-->
+
+    <camera_main>
+      <fovy angle="42.67" />
+
+      <!--
+				angle: float [0.0,180.0], angle of the field of view in the x-z plane
+			-->
+
+      <aspect_ratio value="1.33" />
+
+      <!--
+				value: float > 0.0, aspect ratio of the frustum,
+				=0 default value -> width/height of the window
+			-->
+
+      <clipping_plane far="50.0" near="1.0" />
+
+      <!--
+				near, far: float > 0.0, distances between the viewpoint and
+				the clipping planes, along the negative z-axis
+			-->
+
+      <lookup x="0" y="1" z="0" />
+
+      <!--
+				x,y,z: float, vector, indicate which direction is up
+			-->
+
+      <position x="0" y="0" z="3.0" />
+
+      <!--
+				x,y,z: float, initial position of the camera
+			-->
+
+      <target fixed="1" x="0" y="0" z="0" />
+
+      <!--
+				x,y,z: float, desired viewpoint
+				fixed: 0 or 1,
+				1: true -> the target-point remains fixed during the movement of the camera
+				0: false -> the target-point moves in the same velocity as the camera
+			-->
+
+      <velocity type="linear" v="0" x="0" y="0" z="0" />
+
+      <!--
+				v: float > 0.0, meters per second
+				x,y,z: float, vector, direction of the movement
+			-->
+    </camera_main>
+
+    <light intensity="1">
+      <direction x="0.0" y="0.0" z="1.0" />
+    </light>
+
+    <!--
+    <light intensity="1">
+      <position x="2.5" y="1.2" z="1" />
+    </light>
+-->
+
+    <!--
+<light intensity="0.5">
+      <direction x="-3" y="1" z="-1" />
+</light>
+-->
+  </main>
+  
+<!---------------------------------------------------scene 1-------------------------------------------->
+  <scenes>
+    <scene answer="right" number="1">
+	
+      <audio file="ExpHead/Stimuli/SoundsAz/Neg6az_pink_noise.wav" time="0" />
+
+      <!--0 ground-->
+      <rectangle height="4" width="4">
+        <position x="-20" y="-50" z="-30" />
+
+        <rotation angle="0" x="0" y="0" z="0" />
+
+        <appearance color="000000" scale="1" texture="" />
+      </rectangle>
+    </scene>
+
+<!---------------------------------------------------scene 2-------------------------------------------->
+  <scenes>
+    <scene answer="right" number="2">
+	
+      <audio file="ExpHead/Stimuli/SoundsAz/0az_pink_noise.wav" time="0" />
+
+      <!--0 ground-->
+      <rectangle height="4" width="4">
+        <position x="-20" y="-50" z="-30" />
+
+        <rotation angle="0" x="0" y="0" z="0" />
+
+        <appearance color="000000" scale="1" texture="" />
+      </rectangle>
+    </scene>
+	
+<!---------------------------------------------------scene 3-------------------------------------------->
+  <scenes>
+    <scene answer="right" number="3">
+	
+      <audio file="ExpHead/Stimuli/SoundsAz/6az_pink_noise.wav" time="0" />
+
+      <!--0 ground-->
+      <rectangle height="4" width="4">
+        <position x="-20" y="-50" z="-30" />
+
+        <rotation angle="0" x="0" y="0" z="0" />
+
+        <appearance color="000000" scale="1" texture="" />
+      </rectangle>
+    </scene>
+ 
+<!---------------------------------------------------scene 4-------------------------------------------->
+  <scenes>
+    <scene answer="right" number="4">
+	
+      <audio file="ExpHead/Stimuli/SoundsAz/12az_pink_noise.wav" time="0" />
+
+      <!--0 ground-->
+      <rectangle height="4" width="4">
+        <position x="-20" y="-50" z="-30" />
+
+        <rotation angle="0" x="0" y="0" z="0" />
+
+        <appearance color="000000" scale="1" texture="" />
+      </rectangle>
+    </scene>
+  
+<!---------------------------------------------------scene 5-------------------------------------------->
+  <scenes>
+    <scene answer="right" number="5">
+	
+      <audio file="ExpHead/Stimuli/SoundsAz/18az_pink_noise.wav" time="0" />
+
+      <!--0 ground-->
+      <rectangle height="4" width="4">
+        <position x="-20" y="-50" z="-30" />
+
+        <rotation angle="0" x="0" y="0" z="0" />
+
+        <appearance color="000000" scale="1" texture="" />
+      </rectangle>
+    </scene>  
+  
+<!---------------------------------------------------scene 6-------------------------------------------->
+  <scenes>
+    <scene answer="right" number="6">
+	
+      <audio file="ExpHead/Stimuli/SoundsAz/24az_pink_noise.wav" time="0" />
+
+      <!--0 ground-->
+      <rectangle height="4" width="4">
+        <position x="-20" y="-50" z="-30" />
+
+        <rotation angle="0" x="0" y="0" z="0" />
+
+        <appearance color="000000" scale="1" texture="" />
+      </rectangle>
+    </scene>  
+  
+<!---------------------------------------------------scene 7-------------------------------------------->
+  <scenes>
+    <scene answer="right" number="7">
+	
+      <audio file="ExpHead/Stimuli/SoundsAz/30az_pink_noise.wav" time="0" />
+
+      <!--0 ground-->
+      <rectangle height="4" width="4">
+        <position x="-20" y="-50" z="-30" />
+
+        <rotation angle="0" x="0" y="0" z="0" />
+
+        <appearance color="000000" scale="1" texture="" />
+      </rectangle>
+    </scene>  
+  
+<!---------------------------------------------------scene 8-------------------------------------------->
+  <scenes>
+    <scene answer="right" number="8">
+	
+      <audio file="ExpHead/Stimuli/SoundsAz/36az_pink_noise.wav" time="0" />
+
+      <!--0 ground-->
+      <rectangle height="4" width="4">
+        <position x="-20" y="-50" z="-30" />
+
+        <rotation angle="0" x="0" y="0" z="0" />
+
+        <appearance color="000000" scale="1" texture="" />
+      </rectangle>
+    </scene>  
+  
+<!---------------------------------------------------scene 9-------------------------------------------->
+  <scenes>
+    <scene answer="right" number="9">
+	
+      <audio file="ExpHead/Stimuli/SoundsAz/42az_pink_noise.wav" time="0" />
+
+      <!--0 ground-->
+      <rectangle height="4" width="4">
+        <position x="-20" y="-50" z="-30" />
+
+        <rotation angle="0" x="0" y="0" z="0" />
+
+        <appearance color="000000" scale="1" texture="" />
+      </rectangle>
+    </scene>  
+
+<!---------------------------------------------------scene 10-------------------------------------------->
+  <scenes>
+    <scene answer="right" number="10">
+	
+      <audio file="ExpHead/Stimuli/SoundsAz/48az_pink_noise.wav" time="0" />
+
+      <!--0 ground-->
+      <rectangle height="4" width="4">
+        <position x="-20" y="-50" z="-30" />
+
+        <rotation angle="0" x="0" y="0" z="0" />
+
+        <appearance color="000000" scale="1" texture="" />
+      </rectangle>
+    </scene>	
+
+<!---------------------------------------------------scene 11-------------------------------------------->
+  <scenes>
+    <scene answer="right" number="11">
+	
+      <audio file="ExpHead/Stimuli/SoundsAz/54az_pink_noise.wav" time="0" />
+
+      <!--0 ground-->
+      <rectangle height="4" width="4">
+        <position x="-20" y="-50" z="-30" />
+
+        <rotation angle="0" x="0" y="0" z="0" />
+
+        <appearance color="000000" scale="1" texture="" />
+      </rectangle>
+    </scene>	
+
+<!---------------------------------------------------scene 12-------------------------------------------->
+  <scenes>
+    <scene answer="right" number="12">
+	
+      <audio file="ExpHead/Stimuli/SoundsAz/60az_pink_noise.wav" time="0" />
+
+      <!--0 ground-->
+      <rectangle height="4" width="4">
+        <position x="-20" y="-50" z="-30" />
+
+        <rotation angle="0" x="0" y="0" z="0" />
+
+        <appearance color="000000" scale="1" texture="" />
+      </rectangle>
+    </scene>	
+
+<!---------------------------------------------------scene 13-------------------------------------------->
+  <scenes>
+    <scene answer="right" number="13">
+	
+      <audio file="ExpHead/Stimuli/SoundsAz/66az_pink_noise.wav" time="0" />
+
+      <!--0 ground-->
+      <rectangle height="4" width="4">
+        <position x="-20" y="-50" z="-30" />
+
+        <rotation angle="0" x="0" y="0" z="0" />
+
+        <appearance color="000000" scale="1" texture="" />
+      </rectangle>
+    </scene>	
+
+<!---------------------------------------------------scene 14-------------------------------------------->
+  <scenes>
+    <scene answer="right" number="14">
+	
+      <audio file="ExpHead/Stimuli/SoundsAz/72az_pink_noise.wav" time="0" />
+
+      <!--0 ground-->
+      <rectangle height="4" width="4">
+        <position x="-20" y="-50" z="-30" />
+
+        <rotation angle="0" x="0" y="0" z="0" />
+
+        <appearance color="000000" scale="1" texture="" />
+      </rectangle>
+    </scene>	
+
+<!---------------------------------------------------scene 15-------------------------------------------->
+  <scenes>
+    <scene answer="right" number="15">
+	
+      <audio file="ExpHead/Stimuli/SoundsAz/78az_pink_noise.wav" time="0" />
+
+      <!--0 ground-->
+      <rectangle height="4" width="4">
+        <position x="-20" y="-50" z="-30" />
+
+        <rotation angle="0" x="0" y="0" z="0" />
+
+        <appearance color="000000" scale="1" texture="" />
+      </rectangle>
+    </scene>	
+
+<!---------------------------------------------------scene 16-------------------------------------------->
+  <scenes>
+    <scene answer="right" number="16">
+	
+      <audio file="ExpHead/Stimuli/SoundsAz/84az_pink_noise.wav" time="0" />
+
+      <!--0 ground-->
+      <rectangle height="4" width="4">
+        <position x="-20" y="-50" z="-30" />
+
+        <rotation angle="0" x="0" y="0" z="0" />
+
+        <appearance color="000000" scale="1" texture="" />
+      </rectangle>
+    </scene>	
+  
+<!---------------------------------------------------scene 17-------------------------------------------->
+  <scenes>
+    <scene answer="right" number="17">
+	
+      <audio file="ExpHead/Stimuli/SoundsAz/90az_pink_noise.wav" time="0" />
+
+      <!--0 ground-->
+      <rectangle height="4" width="4">
+        <position x="-20" y="-50" z="-30" />
+
+        <rotation angle="0" x="0" y="0" z="0" />
+
+        <appearance color="000000" scale="1" texture="" />
+      </rectangle>
+    </scene>  
+  
+<!---------------------------------------------------scene 18-------------------------------------------->
+  <scenes>
+    <scene answer="right" number="18">
+	
+      <audio file="ExpHead/Stimuli/SoundsAz/96az_pink_noise.wav" time="0" />
+
+      <!--0 ground-->
+      <rectangle height="4" width="4">
+        <position x="-20" y="-50" z="-30" />
+
+        <rotation angle="0" x="0" y="0" z="0" />
+
+        <appearance color="000000" scale="1" texture="" />
+      </rectangle>
+    </scene>  
+  
+  </scenes>
+</biomose>
